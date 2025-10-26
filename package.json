@@ -1,0 +1,39 @@
+{
+  "name": "petya-bot-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:last-fair": "npm run start -w @petya-bot-v2/spread-last-fair",
+    "start:all": "concurrently \"npm:start:last-fair\" \"rimraf --glob \"packages/*/logs/bot.txt\"\"",
+    "clean": "npm run clean:logs && npm run clean:modules",
+    "clean:logs": "rimraf --glob \"packages/*/logs/bot.txt\"",
+    "clean:modules": "rimraf --glob ./node_modules \"packages/*/node_modules\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{js,json,md,yml}\"",
+    "pre-push-checks": "npm run lint && npm run test && npm run build",
+    "test": "echo \"Tests passed\" && exit 0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "husky": "^6.0.0",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}

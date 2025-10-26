@@ -1,0 +1,9 @@
+{
+  "name": "@petya-bot-v2/common-telegram",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "node-telegram-bot-api": "^0.63.0"
+  }
+}
