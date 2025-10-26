@@ -14,7 +14,7 @@
 /packages/web/build
 
 # Logs
-logs
+logs/*.{txt,log}
 *.log
 npm-debug.log*
 pnpm-debug.log*
