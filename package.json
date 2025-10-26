@@ -12,7 +12,7 @@
     "start:last-fair": "npm run start -w @petya-bot-v2/spread-last-fair",
     "start:all": "concurrently \"npm:start:last-fair\" \"rimraf --glob \"packages/*/logs/bot.txt\"\"",
     "clean": "npm run clean:logs && npm run clean:modules",
-    "clean:logs": "rimraf --glob \"packages/*/logs/bot.txt\"",
+    "clean:logs": "pm2 flush",
     "clean:modules": "rimraf --glob ./node_modules \"packages/*/node_modules\"",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -35,5 +35,8 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "dependencies": {
+    "pm2": "^6.0.13"
   }
 }

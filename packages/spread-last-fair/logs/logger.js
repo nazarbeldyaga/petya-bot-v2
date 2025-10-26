@@ -1,7 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
-const logFilePath = path.join(__dirname, 'bot.txt');
 function logMessage(level, message) {
   const timestamp = new Date().toISOString();
   const formattedMessage = `[${timestamp}] [${level.toUpperCase()}]: ${message}`;
@@ -11,12 +7,6 @@ function logMessage(level, message) {
   } else {
     console.log(formattedMessage);
   }
-
-  fs.appendFile(logFilePath, formattedMessage + '\n', (err) => {
-    if (err) {
-      console.error('CRITICAL: Failed to write to log file:', err);
-    }
-  });
 }
 
 const logger = {
