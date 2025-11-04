@@ -11,6 +11,7 @@
   "scripts": {
     "start:last-fair": "npm run start -w @petya-bot-v2/spread-last-fair",
     "start:all": "concurrently \"npm:start:last-fair\" \"rimraf --glob \"packages/*/logs/bot.txt\"\"",
+    "start:pump-detector": "npm run start -w @petya-bot-v2/pump-detector",
     "clean": "npm run clean:logs && npm run clean:modules",
     "clean:logs": "pm2 flush",
     "clean:modules": "rimraf --glob ./node_modules \"packages/*/node_modules\"",

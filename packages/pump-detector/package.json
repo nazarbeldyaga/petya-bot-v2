@@ -1,0 +1,15 @@
+{
+  "name": "@petya-bot-v2/pump-detector",
+  "version": "1.0.0",
+  "description": "Scans for pump/dump movements on MEXC Futures",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@petya-bot-v2/common-telegram": "1.0.0",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5"
+  }
+}
